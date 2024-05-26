@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О Нас</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #343a40;
+            font-family: 'Arial', sans-serif;
+        }
+        .navbar {
+            background-color: #007b83;
+        }
+        .navbar-brand, .nav-link {
+            color: #f8f9fa !important;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .jumbotron {
+            background-color: #e9ecef;
+            padding: 2rem 1rem;
+            border-radius: 0.3rem;
+            text-align: center;
+        }
+        .footer {
+            background-color: #007b83;
+            color: #f8f9fa;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">Наш Сайт</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('home') }}">Главная <span class="sr-only">(текущая)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('upload_file') }}">Загрузить Файл</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Добро пожаловать на наш сайт!</h1>
+            <p class="lead">Мы команда увлеченных разработчиков, посвященных созданию новейших решений, которые имеют значение.</p>
+            <hr class="my-4">
+            <p>Изучите наш сайт, чтобы узнать больше о наших проектах и о том, как мы можем помочь вам достичь ваших целей.</p>
+            <a class="btn btn-primary btn-lg" href="{{ url_for('upload_file') }}" role="button">Начать</a>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Наша Миссия</h2>
+                <p>Наша миссия - использовать новейшие технологии для создания инновационных решений, которые позволяют людям и бизнесу достигать успеха.</p>
+            </div>
+            <div class="col-md-4">
+                <h2>Наше Видение</h2>
+                <p>Мы видим мир, где технологии органично интегрируются в повседневную жизнь, повышая продуктивность и улучшая качество жизни.</p>
+            </div>
+            <div class="col-md-4">
+                <h2>Контакты</h2>
+                <p>Есть вопросы или хотите узнать больше? Не стесняйтесь <a href="#">связаться с нами</a>. Мы будем рады услышать от вас!</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Наш Сайт. Все права защищены.</p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

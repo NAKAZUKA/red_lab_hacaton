@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        .navbar {
+            background-color: #007b83;
+        }
+        .navbar-brand, .nav-link {
+            color: #f8f9fa !important;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .img-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .img-container img {
+            width: 80%;
+            height: auto;
+            margin: 10px;
+            border: 2px solid #007b83;
+            border-radius: 5px;
+        }
+        .caption {
+            text-align: center;
+            margin-top: 5px;
+            font-size: 18px;
+        }
+        .btn-primary {
+            background-color: #007b83;
+            border-color: #007b83;
+            color: #f8f9fa;
+            margin-top: 20px;
+        }
+        .btn-primary:hover {
+            background-color: #006b72;
+            border-color: #006b72;
+        }
+        .line {
+            width: 100%;
+            border-top: 2px solid #007b83;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .description-container {
+            padding: 10px;
+            margin-top: 10px;
+            width: 100%;
+        }
+        .description {
+            font-size: 20px;
+            line-height: 1.6;
+        }
+        .image-text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .image-text-container img {
+            width: 120%;
+            max-width: 2000px; /* Увеличение ширины изображения */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">Our Site</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('upload_file') }}">Upload File</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('result') }}">Results <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 class="text-center mb-4">Results</h1>
+        <div class="img-container">
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='results/apdex.png') }}" alt="Apdex">
+                <!-- Убрано название изображения -->
+            </div>
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='results/errors.png') }}" alt="Errors">
+                <!-- Убрано название изображения -->
+            </div>
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='results/throughput.png') }}" alt="Throughput">
+                <!-- Убрано название изображения -->
+            </div>
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='results/web_response.png') }}" alt="Web Response">
+                <!-- Убрано название изображения -->
+            </div>
+            <hr class="line">
+            <div class="col-md-6 image-text-container">
+                <img src="{{ url_for('static', filename='results/correlation_matrix.png') }}" alt="Correlation Matrix">
+                <!-- Убрано название изображения -->
+                <div class="description-container">
+                    <div class="description">
+                        <li>0 - Web Response - время ответа сервиса на внешний http-запрос.</li>
+                        <li>1 - Throughput - пропускная способность сервиса.</li>
+                        <li>2 - APDEX - сводный синтетический показатель “здоровья” сервиса.</li>
+                        <li>3 - Error - процент ошибок в обработанных запросах.</li>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="{{ url_for('upload_file') }}" class="btn btn-primary btn-block">Загрузить ещё файл</a>
+    </div>
+</body>
+</html>
