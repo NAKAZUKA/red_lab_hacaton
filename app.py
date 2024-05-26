@@ -38,8 +38,7 @@ def upload_file_post():
         if not os.path.exists(file_path):
             file.save(file_path)
         generate_and_save_plots(file_path, app.config['RESULT_FOLDER'])
-        context = safe_divide()
-        return redirect(url_for('result'), context=context)
+        return redirect(url_for('result'))
 
 
 @app.route('/result')
