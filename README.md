@@ -56,6 +56,7 @@ ML-инженеры
 
 ```sh
 pip install -r requirements.txt
+```
 
 
 ## Структура проекта
